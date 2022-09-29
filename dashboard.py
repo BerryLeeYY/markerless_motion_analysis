@@ -14,7 +14,7 @@ import plotly.graph_objs as go
 
 app = dash.Dash(__name__, suppress_callback_exceptions=True)
 
-conn=pymysql.connect(host='database-2.c3oi4qobsypd.us-east-1.rds.amazonaws.com',port=int(3306),user='LeeBerry',passwd='a88888888',db='motion_analysis_db')
+conn=pymysql.connect(host='',port=int(),user='',passwd='',db='motion_analysis_db')
 df=pd.read_sql_query("SELECT * FROM user_registration",conn)
 
 
@@ -323,7 +323,7 @@ login_page = html.Div([
 )
 
 def login_func(n_clicks, account_id, password_id):
-    conn=pymysql.connect(host='127.0.0.1',port=int(3307),user='root',passwd='a88888888',db='motion_analysis_db')
+    conn=pymysql.connect()
     df=pd.read_sql_query("SELECT * FROM user_registration",conn)
     conn.close()
     
